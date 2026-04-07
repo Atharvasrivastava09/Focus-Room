@@ -1,0 +1,46 @@
+body {
+  background: #121A21;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.custom-navbar {
+  background: #121A21;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+/* Nav links */
+.nav-link {
+  color: #aaa;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00e5ff;
+  transform: scale(1);
+}
+
+.active-link {
+  color: #00e5ff !important;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00e5ff;
+  bottom: -5px;
+  left: 0;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+.profile-icon {
+  font-size: 1.8rem;
+  color: #ccc;
+}
