@@ -335,7 +335,6 @@ main{
 		margin: 0 20px;
 		padding: 0 10px;
 	}
-}
 	.todo-app {
 		padding: 1.5rem;
 		gap: 20px;
@@ -354,7 +353,7 @@ main{
 	#task-list li {
 		font-size: 1rem;
 	}
-
+}
 #timer-label{
     color: #C0C0C0 !important ;
     font-weight: 400;
