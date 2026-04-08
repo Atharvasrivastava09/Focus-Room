@@ -15,7 +15,6 @@ body {
   top: 0;
 }
 
-/* Nav links */
 .nav-link {
   color: #aaa;
   position: relative;
@@ -58,7 +57,7 @@ body {
 }
 
 /* SVG Ring Animation Setup */
-.progress-ring__circle {
+.progress-ring-circle {
     transition: stroke-dashoffset 0.35s;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
@@ -79,7 +78,7 @@ body {
     background: transparent;
     transition: 0.3s;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .btn-outline-cyan:hover {
@@ -90,4 +89,19 @@ body {
 
 .tracking-widest {
     letter-spacing: 0.2em;
+}
+
+#timer-label{
+    color: #C0C0C0 !important ;
+    font-weight: 400;
+    text-shadow: 0 0 5px #7df9ff;
+}
+
+#timer-mode{
+    background-color: #121A21;     
+    color: #C0C0C0;  
+    font-weight: 500;   
+    font-size: 20px;    
+    letter-spacing: 1px;
+    border: none;
 }
