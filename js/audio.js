@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ─── 1. AUDIO ENGINE INITIALIZATION ──────────────────────────────────────
 
-  const audioPlayers = {};  // { soundName: HTMLAudioElement }
+
+  const audioPlayers = {};  
   const soundCards   = document.querySelectorAll('.sound-card');
 
   soundCards.forEach(card => {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ─── 2. STATE RESTORATION FROM localStorage ───────────────────────────────
+
 
   const STORAGE_KEY = 'soundscapeMixerState';
   const savedState  = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
@@ -66,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-  // ─── 3. PLAYBACK CONTROLS ────────────────────────────────────────────────
+  
 
   soundCards.forEach(card => {
     const soundName  = card.dataset.sound;
@@ -116,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ─── 4. SESSION PERSISTENCE ───────────────────────────────────────────────
+
 
   window.addEventListener('beforeunload', () => {
     const state = {};
