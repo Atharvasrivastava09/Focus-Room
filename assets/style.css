@@ -373,5 +373,133 @@ main{
 
 
 
+/* Custom grid for 5 columns on large screens */
+.sound-main{
+	/*margin: 20px 0;*/
+	background: rgba(18, 26, 33, 0.9);
+	display: flex;
+    flex-direction: column;
+    align-items: center;  /* Horizontal centering */
+    justify-content: center; 
+    min-height: 80vh;     /* Ensures it takes up the screen */
+    padding-top: 40px;
+}
+
+
+main .container {
+    width: 100%;
+}
+
+
+@media (min-width: 992px) {
+    .col-lg-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+.sound-card {
+    background: rgba(18, 26, 33, 0.8) !important;
+    border: 1px solid rgba(34, 211, 238, 0.2) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sound-card:hover {
+    border-color: var(--accent-cyan) !important;
+    transform: scale(1.01);
+	/*background: var(--accent-cyan);*/
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+.sound-card.active {
+    background: rgba(34, 211, 238, 0.1) !important;
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.icon-display {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-title {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Status Dot Indicator */
+.status-indicator {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active .dot {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.active .status-text {
+    color: var(--accent-cyan);
+    font-weight: bold;
+}
+
+/* MUTE ICON DEFAULT (UNMUTED = WHITE) */
+.mute-toggle {
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* MUTED STATE */
+.mute-toggle.muted {
+    color: grey;
+}
+
+/* PLAY / PAUSE BUTTON STYLE */
+.play-btn,
+.pause-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6c757d; /* bootstrap grey */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* ICON INSIDE BUTTON */
+.play-btn i,
+.pause-btn{
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* HOVER EFFECT */
+.play-btn:hover,
+.pause-btn:hover {
+    background: rgba(34, 211, 238, 0.5);
+}
 
 
