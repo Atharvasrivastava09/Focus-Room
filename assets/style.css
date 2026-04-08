@@ -11,9 +11,10 @@ body {
   border-radius: 12px;
   margin: 20px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
 }
 
-/* Nav links */
 .nav-link {
   color: #aaa;
   position: relative;
@@ -43,4 +44,64 @@ body {
 .profile-icon {
   font-size: 1.8rem;
   color: #ccc;
+}
+
+/* Timer Layout */
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.timer-container {
+    width: 320px;
+    height: 320px;
+}
+
+/* SVG Ring Animation Setup */
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    /* These values represent the circumference (2 * PI * r) */
+    stroke-dasharray: 880; 
+    stroke-dashoffset: 0;
+}
+
+.timer-display h1 {
+    font-size: 5rem;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+/* Custom Cyan Button */
+.btn-outline-cyan {
+    color: var(--accent-cyan);
+    border: 2px solid var(--accent-cyan);
+    background: transparent;
+    transition: 0.3s;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.btn-outline-cyan:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+.tracking-widest {
+    letter-spacing: 0.2em;
+}
+
+#timer-label{
+    color: #C0C0C0 !important ;
+    font-weight: 400;
+    text-shadow: 0 0 5px #7df9ff;
+}
+
+#timer-mode{
+    background-color: #121A21;     
+    color: #C0C0C0;  
+    font-weight: 500;   
+    font-size: 20px;    
+    letter-spacing: 1px;
+    border: none;
 }
