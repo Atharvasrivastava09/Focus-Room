@@ -12,7 +12,8 @@ body {
   margin: 20px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
   position: sticky;
-  top: 0;
+    top: 0;
+    z-index: 1050;
 }
 
 .nav-link {
@@ -353,7 +354,7 @@ main{
 	#task-list li {
 		font-size: 1rem;
 	}
-}
+} 
 #timer-label{
     color: #C0C0C0 !important ;
     font-weight: 400;
@@ -369,10 +370,40 @@ main{
     border: none;
 }
 
+/*Stats Css*/
+.tracking-widest {
+    letter-spacing: 0.15em;
+}
 
+.card.glow {
+    border-width: 2px !important;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1); 
+    transition: all 0.3s ease;
+}
 
+.card.glow:hover {
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.25);
+    transform: translateY(-2px);
+	cursor: pointer;
+}
 
+.border-info {
+    border-color: #22d3ee !important; 
+}
 
+.text-info {
+    color: #22d3ee !important;
+}
+
+.display-1.text-info {
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+#weeklyChart {
+    width: 100% !important;
+    height: 250px !important;
+}
 /* Custom grid for 5 columns on large screens */
 .sound-main{
 	/*margin: 20px 0;*/

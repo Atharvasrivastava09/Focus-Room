@@ -5,8 +5,8 @@ const reset_button = document.getElementById('reset-btn');
 const timer_mode = document.getElementById('timer-mode');
 const timer_label = document.getElementById('timer-label');
 
-let total_time = 5; //time in seconds
-let time_left = total_time;
+let total_time = parseInt(localStorage.getItem('total_time')) || 5; //time in seconds
+let time_left = parseInt(localStorage.getItem('time_left')) || total_time;
 let timerId = null;
 const circumference = 2*Math.PI*140;
 let short_breaks=0;
@@ -23,6 +23,9 @@ function updateUI(){
 
     const offset = circumference - (time_left/total_time) * circumference;
     circle.style.strokeDashoffset = offset;
+
+    localStorage.setItem('time_left',time_left);
+    localStorage.setItem('total_time',total_time);
 }
 
 function beginCountdown(){
@@ -44,7 +47,9 @@ function startTimer(){
         clearInterval(timerId);
         timerId = null;
         start_button.textContent = 'START';
+        localStorage.setItem('time_running','false');
     } else{
+        localStorage.setItem('time_running','true');
         beginCountdown();
     }
 }
@@ -53,7 +58,9 @@ function resetTimer(){
     clearInterval(timerId);
     timerId=null;
     start_button.textContent = 'START';
+    localStorage.removeItem('time_left');
     changeMode();
+    localStorage.setItem('time_running','false');
 }
 
 function changeMode(){
@@ -69,8 +76,9 @@ function changeMode(){
         total_time = 3;
         timer_label.textContent = 'Long Break';
     }
-
     time_left = total_time;
+    localStorage.setItem('time_left',time_left);
+    localStorage.setItem('total_time',total_time);
     updateUI();
 }
 
@@ -92,7 +100,7 @@ function autoTransition(){
     beginCountdown();
     }
     else{
-        alert(`${session} Session of Pomodoro completed!!!`)
+        alert(`${session*4} Session of Pomodoro completed!!! \n ${session} cycle is completed successfully.`);
         clearInterval(timerId);
         start_button.textContent = 'START';
     }
@@ -106,6 +114,10 @@ timer_mode.addEventListener('change',() => {
     start_button.textContent = 'START';
     changeMode();
 });
+
+if(localStorage.getItem('time_running') === 'true'){
+    beginCountdown();
+}
 
 updateUI();
 
