@@ -5,7 +5,7 @@ const reset_button = document.getElementById('reset-btn');
 const timer_mode = document.getElementById('timer-mode');
 const timer_label = document.getElementById('timer-label');
 
-let total_time = parseInt(localStorage.getItem('total_time')) || 5; //time in seconds
+let total_time = parseInt(localStorage.getItem('total_time')) || 25*60; //time in seconds
 let time_left = parseInt(localStorage.getItem('time_left')) || total_time;
 let timerId = null;
 const circumference = 2*Math.PI*140;
@@ -66,14 +66,14 @@ function resetTimer(){
 function changeMode(){
     const mode = timer_mode.value;
     if(mode === 'Pomodoro'){
-        total_time = 5;
+        total_time = 25*60;
         timer_label.textContent = 'Focus';
     } else if(mode === 'Short Break'){
-        total_time = 2;
+        total_time = 5*60;
         short_breaks ++;
         timer_label.textContent = 'Short Break';
     } else if(mode === 'Long Break'){
-        total_time = 3;
+        total_time = 15*60;
         timer_label.textContent = 'Long Break';
     }
     time_left = total_time;
